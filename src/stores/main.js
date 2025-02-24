@@ -5,5 +5,10 @@ export const useStore = defineStore('store', {
         return {
             user: {},
         }
-    }
+    },
+    actions: {
+        check({ commit }, telegramId) {
+
+        }
+    },
 })
