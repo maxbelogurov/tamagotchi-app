@@ -15,7 +15,6 @@ const nameIsFull = computed(() =>
 const createPet = async () => {
   const data = {
     telegram_id: store.user.telegram_id,
-    telegram_name: 'test',
     pet_name: petName.value,
   }
   const result = await createUser(data);

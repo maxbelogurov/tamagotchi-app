@@ -1,13 +1,14 @@
 <script setup>
   import { onBeforeMount } from "vue";
   import { useRouter } from "vue-router";
-  import { useTelegram } from "@/services/telegram.js";
-  const router = useRouter()
+  import { useMiniApp } from "vue-tg";
 
-  
+  const router = useRouter()
+  const miniApp = useMiniApp();
+
   onBeforeMount(() => {
-    const tg = useTelegram()
-    if (!tg) {
+    const tgUser = miniApp.initDataUnsafe?.user || {id: 1234}
+    if (!tgUser.id) {
       router.push('/not-tg')
     }
   })
